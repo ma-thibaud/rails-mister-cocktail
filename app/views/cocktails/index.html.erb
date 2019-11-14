@@ -1,0 +1,19 @@
+<h1>All cocktails</h1>
+
+<div class="d-flex flex-wrap justify-content-between">
+
+  <% @cocktails.each do |cocktail| %>
+      <div class="card m-2" style="width: 18rem;">
+        <img src=<%= "https://source.unsplash.com/1600x900/?cocktail,#{cocktail.name}" %> class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title"><%= cocktail.name.capitalize %></h5>
+          <ul class="card-text">
+            <% cocktail.doses.each do |dose| %>
+              <li><%= "#{dose.ingredient.name} - #{dose.description}" %></li>
+            <% end %>
+          </ul>
+          <%= link_to 'View', cocktail_path(cocktail), class: 'btn btn-primary' %>
+        </div>
+      </div>
+  <% end %>
+</div>
