@@ -14,13 +14,11 @@
       </div>
     </div>
 
-    <%#= link_to 'Add a dose', new_cocktail_dose_path(@cocktail), class: 'btn btn-primary' %>
     <div>
       <%= link_to "Delete cocktail", cocktail_path(@cocktail), method: :delete, data: { confirm: "Are you sure?" }, class: 'btn btn-info' %>
       <%= link_to 'Back to list', cocktails_path, class: 'btn btn-secondary' %>
     </div>
 
   </div>
-    <%#= render 'layouts/shared/modal_add_dose' %>
 </div>
 
