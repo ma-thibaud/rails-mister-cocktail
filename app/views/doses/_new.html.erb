@@ -1,0 +1,29 @@
+<div class="container mt-4">
+  <h1>Add a dose</h1>
+
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap">Add an ingredient</button>
+
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Add an ingredient</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <%= simple_form_for [cocktail, dose] do |f| %>
+            <%= f.error :base %>
+            <%= f.association :ingredient %>
+            <%= f.input :description %>
+        </div>
+        <div class="modal-footer">
+            <%= link_to 'Cancel', cocktail_path(@cocktail), class: 'btn btn-danger' %>
+            <%= f.submit class: 'btn btn-primary' %>
+        </div>
+          <% end %>
+      </div>
+    </div>
+  </div>
+</div>
