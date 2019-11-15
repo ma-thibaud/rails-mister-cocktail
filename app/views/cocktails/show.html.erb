@@ -14,8 +14,8 @@
       </div>
     </div>
 
-    <div>
-      <%= link_to "Delete cocktail", cocktail_path(@cocktail), method: :delete, data: { confirm: "Are you sure?" }, class: 'btn btn-info' %>
+    <div class="mt-3">
+      <%= link_to "Delete cocktail", cocktail_path(@cocktail), method: :delete, data: { confirm: "Are you sure?" }, class: 'btn btn-info mr-4' %>
       <%= link_to 'Back to list', cocktails_path, class: 'btn btn-secondary' %>
     </div>
 
