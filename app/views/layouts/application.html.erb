@@ -12,9 +12,7 @@
 
   <body>
     <%= render 'layouts/shared/navbar' %>
-    <div class="container mt-4">
       <%= yield %>
-    </div>
     <%= javascript_include_tag "application" %> <!-- from app/assets/javascripts/application.js -->
     <%= javascript_pack_tag "application" %>    <!-- from app/javascript/packs/application.js -->
   </body>
