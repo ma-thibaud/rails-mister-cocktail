@@ -1,16 +1,26 @@
 <%= render 'layouts/shared/cocktail' %>
 <div class="container mt-4">
-  <ul>
-    <% @cocktail.doses.each do |dose| %>
-    <li><%= "#{dose.ingredient.name} - #{dose.description}" %> <%= link_to "(delete)", dose_path(dose), method: :delete, data: { confirm: "Are you sure?" } %></li>
-    <% end %>
-  </ul>
+  <div class="container d-flex flex-wrap justify-content-between">
 
-  <%= render 'doses/new', cocktail: @cocktail, dose: @dose %>
-  <%#= link_to 'Add a dose', new_cocktail_dose_path(@cocktail), class: 'btn btn-primary' %>
-  <%= link_to "Delete cocktail", cocktail_path(@cocktail), method: :delete, data: { confirm: "Are you sure?" }, class: 'btn btn-info' %>
-  <%= link_to 'Back to list', cocktails_path, class: 'btn btn-secondary' %>
+    <div class="card">
+      <div class="card-body">
+        <h3 class="card-title">Ingredients</h3>
+          <ul class="card-text">
+            <% @cocktail.doses.each do |dose| %>
+            <li><%= "#{dose.ingredient.name} - #{dose.description}" %> <%= link_to "(delete)", dose_path(dose), method: :delete, data: { confirm: "Are you sure?" } %></li>
+            <% end %>
+          </ul>
+          <%= render 'doses/new', cocktail: @cocktail, dose: @dose %>
+      </div>
+    </div>
 
-  <%#= render 'layouts/shared/modal_add_dose' %>
+    <%#= link_to 'Add a dose', new_cocktail_dose_path(@cocktail), class: 'btn btn-primary' %>
+    <div>
+      <%= link_to "Delete cocktail", cocktail_path(@cocktail), method: :delete, data: { confirm: "Are you sure?" }, class: 'btn btn-info' %>
+      <%= link_to 'Back to list', cocktails_path, class: 'btn btn-secondary' %>
+    </div>
+
+  </div>
+    <%#= render 'layouts/shared/modal_add_dose' %>
 </div>
 

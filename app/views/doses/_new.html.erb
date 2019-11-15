@@ -1,7 +1,6 @@
 <div class="container mt-4">
-  <h1>Add a dose</h1>
 
-  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap">Add an ingredient</button>
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap">Add a dose</button>
 
   <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -19,7 +18,7 @@
             <%= f.input :description %>
         </div>
         <div class="modal-footer">
-            <%= link_to 'Cancel', cocktail_path(@cocktail), class: 'btn btn-danger' %>
+            <%= link_to 'Cancel', cocktail_path(@cocktail), class: 'btn btn-info' %>
             <%= f.submit class: 'btn btn-primary' %>
         </div>
           <% end %>
