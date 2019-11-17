@@ -2,7 +2,7 @@
 
 <div class="container mt-4">
   <h1>All cocktails</h1>
-  <div class="d-flex flex-wrap justify-content-between">
+  <div class="d-flex row justify-content-between">
     <% @cocktails.each do |cocktail| %>
         <div class="card m-2" style="width: 18rem;">
           <img src=<%= "https://source.unsplash.com/1600x900/?cocktail,#{cocktail.name}" %> class="card-img-top" alt="...">
